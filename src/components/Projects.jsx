@@ -5,7 +5,7 @@ const Projects = ({ projects, showBtn = false }) => {
     const navigate = useNavigate();
 
     return (
-        <section className="py-20 px-4 bg-white dark:bg-black">
+        <section id="projects" className="py-20 px-4 bg-white dark:bg-black">
             <div className="max-w-7xl mx-auto flex flex-col">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">

@@ -5,8 +5,8 @@ export default function Navbar({ navItems }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <div className="w-full bg-white dark:bg-black">
-            <nav className="sticky z-10 bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-lg shadow-sm">
+        <div className="sticky top-0 w-full bg-white dark:bg-black">
+            <nav className="z-10 bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-lg shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex items-center">
