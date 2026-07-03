@@ -1,16 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ navItems }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const navItems = [
-        { name: "Home", to: "/" },
-        { name: "Projects", to: "/projects" },
-        { name: "Github", to: "/github" },
-        { name: "LeetCode", to: "/leetcode" },
-        { name: "Contact", to: "/contact" },
-    ];
 
     return (
         <div className="w-full bg-white dark:bg-black">

@@ -26,8 +26,8 @@ const Hero = () => {
                         <button className="px-8 py-4 bg-linear-to-r from-pink-600 to-red-600 hover:from-pink-700 hover:to-red-700 text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 cursor-pointer">
                             View Projects
                         </button>
-                        <button className="px-8 py-4 border border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-zinc-800 font-semibold rounded-lg transition-colors duration-200">
-                            Read Success Stories
+                        <button className="px-8 py-4 border border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-zinc-800 font-semibold rounded-lg transition-colors duration-200 cursor-pointer">
+                            Contact
                         </button>
                     </div>
                 </div>
