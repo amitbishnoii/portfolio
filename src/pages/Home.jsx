@@ -1,12 +1,12 @@
-import React from "react";
+import Hero from "../components/Hero";
+import TechStack from "../components/TechStack";
 
 const Home = () => {
     return (
-        <div>
-            <div className="main">
-                Hello world
-            </div>
-        </div>
+        <>
+            <Hero />
+            <TechStack />
+        </>
     );
 };
 
