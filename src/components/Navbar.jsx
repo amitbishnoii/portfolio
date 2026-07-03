@@ -60,31 +60,24 @@ export default function Navbar({ navItems }) {
                     <div className="md:hidden border-t border-gray-200 dark:border-zinc-800">
                         <div className="px-2 pt-2 pb-3 space-y-1">
                             {navItems.map((item) => (
-                                <a
+                                <NavLink
                                     key={item.name}
                                     to={item.to}
-                                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                                        item.current
-                                            ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
-                                            : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-zinc-800"
-                                    }`}
+                                    className={({ isActive }) =>
+                                        `inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors duration-200 ${
+                                            isActive
+                                                ? "text-blue-600 dark:text-blue-400 border-b-2 border-blue-500"
+                                                : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                                        }}`
+                                    }
                                 >
                                     {item.name}
-                                </a>
+                                </NavLink>
                             ))}
                             <div className="border-t border-gray-200 dark:border-zinc-800 pt-4 mt-4">
-                                <a
-                                    to="#"
-                                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                                >
-                                    Sign In
-                                </a>
-                                <a
-                                    to="#"
-                                    className="block px-3 py-2 rounded-md text-base font-medium bg-blue-600 text-white mt-2"
-                                >
-                                    Get Started
-                                </a>
+                                <button className="hidden md:block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors cursor-pointer">
+                                    Download Resume
+                                </button>
                             </div>
                         </div>
                     </div>
