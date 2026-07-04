@@ -58,6 +58,7 @@ export default function Navbar({ navItems }) {
                         opacity: isMenuOpen ? 1 : 0,
                     }}
                     transition={{ duration: 0.35 }}
+                    className={isMenuOpen ? "pointer-events-auto" : "pointer-events-none"}
                 >
                     <div className="px-2 pt-2 pb-3 space-y-1 flex justify-between">
                         {navItems.map((item) => (
