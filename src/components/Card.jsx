@@ -1,29 +1,41 @@
-import { FaGithub } from "react-icons/fa6";
+import { BsArrowUpRight } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
 
 const Card = ({ url, title, description, icon, gitRepo }) => {
     return (
-        <div className="relative max-w-lg p-8 border border-gray-100 bg-black shadow-xl rounded-xl">
-            <div className="absolute right-4 top-4 flex gap-1.5 items-center justify-center">
-                <a href={url}>
-                    <button className="rounded-full px-3 py-2 bg-green-100 text-green-600 font-medium text-xs cursor-pointer">
-                        Live Demo
-                    </button>
+        <div className="project-card group relative max-w-lg p-7 border border-[#D8D6CE] dark:border-[#2A2C30] bg-[#F2F1EC] dark:bg-[#14161A] transition-colors duration-150 hover:border-[#D98F2B]">
+            <img src={icon} className="w-9 h-9 object-contain" />
+
+            <h5 className="pf-mono mt-5 text-lg font-bold text-[#1B1D1F] dark:text-[#ECEAE2]">
+                {title}
+            </h5>
+
+            <p className="pf-sans mt-2 text-sm text-[#4A4D52] dark:text-[#B7B8B6] leading-relaxed">
+                {description}
+            </p>
+
+            <div className="flex items-center gap-6 mt-6">
+                <a
+                    href={url}
+                    className="group/link pf-sans inline-flex items-center gap-1.5 text-sm font-medium text-[#1B1D1F] dark:text-[#ECEAE2]"
+                >
+                    <span className="border-b border-[#1B1D1F] dark:border-[#ECEAE2] group-hover/link:border-[#D98F2B] group-hover/link:text-[#D98F2B] transition-colors duration-150">
+                        Live demo
+                    </span>
+                    <BsArrowUpRight
+                        size={14}
+                        strokeWidth={2}
+                        className="group-hover/link:text-[#D98F2B] transition-colors duration-150"
+                    />
                 </a>
-                <a href={gitRepo}>
-                    <button className="rounded-full px-3 py-2 bg-gray-900 text-white font-medium text-xs cursor-pointer hover:bg-gray-800 transition-colors gap-1.5 flex items-center">
-                        <FaGithub size={20} /> Github
-                    </button>
+
+                <a
+                    href={gitRepo}
+                    className="pf-sans inline-flex items-center gap-1.5 text-sm font-medium text-[#6B6F76] hover:text-[#1B1D1F] dark:hover:text-[#ECEAE2] transition-colors duration-150"
+                >
+                    <FaGithub size={16} strokeWidth={2} />
+                    Repo
                 </a>
-            </div>
-
-            <div className="mt-4 text-gray-200 sm:pr-8">
-                <img src={icon} />
-
-                <h5 className="mt-4 text-xl font-bold text-gray-300">
-                    {title}
-                </h5>
-
-                <p className="mt-2 text-sm">{description}</p>
             </div>
         </div>
     );

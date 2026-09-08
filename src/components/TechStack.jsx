@@ -14,18 +14,12 @@ const TechStack = () => {
         {
             category: "Frontend",
             icon: "🎨",
-            skills: [
-                { title: "React" },
-                { title: "Next.js" },
-            ],
+            skills: [{ title: "React" }, { title: "Next.js" }],
         },
         {
             category: "Backend",
             icon: "⚙️",
-            skills: [
-                { title: "Node.js" },
-                { title: "Express.js" },
-            ],
+            skills: [{ title: "Node.js" }, { title: "Express.js" }],
         },
         {
             category: "Databases",
@@ -39,10 +33,7 @@ const TechStack = () => {
         {
             category: "Authentication",
             icon: "🔐",
-            skills: [
-                { title: "JWT" },
-                { title: "OAuth 2.0" },
-            ],
+            skills: [{ title: "JWT" }, { title: "OAuth 2.0" }],
         },
         {
             category: "Tools",
@@ -57,38 +48,42 @@ const TechStack = () => {
     ];
 
     return (
-        <section className="py-20 px-4 bg-white dark:bg-black">
-            <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <section className="section-block py-24 px-6 sm:px-8 bg-[#F2F1EC] dark:bg-[#14161A]">
+            <div className="max-w-6xl mx-auto">
+                <div className="mb-16 max-w-xl">
+                    <h2 className="section-heading pf-mono text-3xl sm:text-4xl font-bold text-[#1B1D1F] dark:text-[#ECEAE2] tracking-tight">
                         Skills
                     </h2>
-                    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Everything you need to build amazing products, shipped
-                        faster than ever before.
+                    <p className="pf-sans text-base text-[#6B6F76] mt-3 leading-relaxed">
+                        The languages, frameworks, and tools I build with.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {techStack.map((skill, index) => (
+                <div className="skill-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#D8D6CE] dark:bg-[#2A2C30] border border-[#D8D6CE] dark:border-[#2A2C30]">
+                    {techStack.map((group, index) => (
                         <div
                             key={index}
-                            className="group p-8 bg-gray-50 dark:bg-zinc-900 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                            className="skill-cell p-7 bg-[#F2F1EC] dark:bg-[#14161A]"
                         >
-                            <div className="text-4xl mb-4">{skill.icon}</div>
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                                {skill.category}
-                            </h3>
-                            {skill.skills.map((s) => {
-                                return (
-                                    <p
+                            <div className="flex items-center gap-2 mb-4">
+                                <span className="text-base grayscale opacity-70">
+                                    {group.icon}
+                                </span>
+                                <h3 className="pf-mono text-sm font-bold text-[#1B1D1F] dark:text-[#ECEAE2]">
+                                    {group.category}
+                                </h3>
+                            </div>
+
+                            <div className="flex flex-wrap gap-2">
+                                {group.skills.map((s) => (
+                                    <span
                                         key={s.title}
-                                        className="text-gray-600 dark:text-gray-400 leading-relaxed"
+                                        className="pf-mono text-xs px-2.5 py-1 border border-[#D8D6CE] dark:border-[#2A2C30] text-[#4A4D52] dark:text-[#B7B8B6] rounded-sm"
                                     >
                                         {s.title}
-                                    </p>
-                                );
-                            })}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     ))}
                 </div>

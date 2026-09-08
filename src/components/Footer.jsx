@@ -7,27 +7,39 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="bg-white w-full dark:bg-black border-t border-gray-200 dark:border-zinc-800">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div className="text-center md:text-left">
-                        <div className="text-xl font-bold text-gray-900 dark:text-white flex gap-4">
-                            <a href="https://leetcode.com/u/aMitBishnoiiiiii/">
+        <footer className="site-footer bg-white w-full dark:bg-black border-t border-gray-200 dark:border-zinc-800">
+            <div className="footer-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div className="footer-social-wrap text-center md:text-left">
+                        <div className="footer-socials text-xl font-bold text-gray-900 dark:text-white flex gap-4">
+                            <a
+                                aria-label="LeetCode"
+                                href="https://leetcode.com/u/aMitBishnoiiiiii/"
+                            >
                                 {<SiLeetcode />}
                             </a>
-                            <a href="https://github.com/amitbishnoii?tab=overview&from=2026-02-01&to=2026-02-26">
+                            <a
+                                aria-label="GitHub"
+                                href="https://github.com/amitbishnoii?tab=overview&from=2026-02-01&to=2026-02-26"
+                            >
                                 {<FaGithub />}
                             </a>
-                            <a href="mailto:amitbishnoi29012@gmail.com">
+                            <a
+                                aria-label="Email"
+                                href="mailto:amitbishnoi29012@gmail.com"
+                            >
                                 {<MdEmail />}
                             </a>
-                            <a href="https://www.linkedin.com/in/amit-bishnoi-52bb4735a/">
+                            <a
+                                aria-label="LinkedIn"
+                                href="https://www.linkedin.com/in/amit-bishnoi-52bb4735a/"
+                            >
                                 {<FaLinkedin />}
                             </a>
                         </div>
                     </div>
 
-                    <nav className="flex flex-wrap justify-center gap-6">
+                    <nav className="footer-nav flex flex-wrap justify-center gap-6">
                         {navItems.map((item) => {
                             return (
                                 <NavLink

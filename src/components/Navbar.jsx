@@ -7,47 +7,46 @@ import { motion } from "motion/react";
 export default function Navbar({ navItems }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const linkClass = ({ isActive }) =>
+        `pf-sans inline-flex items-center pt-1 pb-1 text-sm font-medium border-b-2 transition-colors duration-150 ${
+            isActive
+                ? "text-[#1B1D1F] dark:text-[#ECEAE2] border-[#D98F2B]"
+                : "text-[#6B6F76] border-transparent hover:text-[#1B1D1F] dark:hover:text-[#ECEAE2]"
+        }`;
+
     return (
-        <div className="sticky z-20 top-0 w-full bg-white dark:bg-black">
-            <nav className="z-10 bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-lg shadow-sm">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-16">
-                        <div className="flex items-center">
-                            <div className="hidden md:ml-6 md:flex md:space-x-8">
-                                {navItems.map((item) => (
-                                    <NavLink
-                                        key={item.name}
-                                        to={item.to}
-                                        className={({ isActive }) =>
-                                            `inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors duration-200 ${
-                                                isActive
-                                                    ? "text-blue-600 dark:text-blue-400 border-b-2 border-blue-500"
-                                                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
-                                            }}`
-                                        }
-                                    >
-                                        {item.name}
-                                    </NavLink>
-                                ))}
-                            </div>
+        <div className="site-nav sticky z-20 top-0 w-full backdrop-blur-sm">
+            <nav className="max-w-6xl mx-auto px-6 sm:px-8">
+                <div className="flex justify-between h-16">
+                    <div className="flex items-center">
+                        <div className="hidden md:flex md:space-x-8">
+                            {navItems.map((item) => (
+                                <NavLink
+                                    key={item.name}
+                                    to={item.to}
+                                    className={linkClass}
+                                >
+                                    {item.name}
+                                </NavLink>
+                            ))}
                         </div>
+                    </div>
 
-                        <div className="flex items-center gap-4">
-                            <button className="hidden md:block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors cursor-pointer">
-                                Download Resume
-                            </button>
+                    <div className="flex items-center gap-4">
+                        <button className="hidden md:block pf-sans px-4 py-2 border border-[#1B1D1F] dark:border-[#ECEAE2] text-[#1B1D1F] dark:text-[#ECEAE2] text-sm font-medium hover:bg-[#1B1D1F] hover:text-[#F2F1EC] dark:hover:bg-[#ECEAE2] dark:hover:text-[#14161A] transition-colors duration-150 cursor-pointer">
+                            Download resume
+                        </button>
 
-                            <button
-                                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
-                            >
-                                {isMenuOpen === true ? (
-                                    <GrClose size={20} />
-                                ) : (
-                                    <RxHamburgerMenu size={20} />
-                                )}
-                            </button>
-                        </div>
+                        <button
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            className="md:hidden inline-flex items-center justify-center p-2 text-[#6B6F76] hover:text-[#1B1D1F] dark:hover:text-[#ECEAE2] transition-colors duration-150"
+                        >
+                            {isMenuOpen ? (
+                                <GrClose size={20} />
+                            ) : (
+                                <RxHamburgerMenu size={20} />
+                            )}
+                        </button>
                     </div>
                 </div>
 
@@ -58,28 +57,26 @@ export default function Navbar({ navItems }) {
                         opacity: isMenuOpen ? 1 : 0,
                     }}
                     transition={{ duration: 0.35 }}
-                    className={isMenuOpen ? "pointer-events-auto" : "pointer-events-none"}
+                    className={`overflow-hidden ${
+                        isMenuOpen
+                            ? "pointer-events-auto"
+                            : "pointer-events-none"
+                    }`}
                 >
-                    <div className="px-2 pt-2 pb-3 space-y-1 flex justify-between">
+                    <div className="pt-2 pb-4 flex flex-col items-center gap-3">
                         {navItems.map((item) => (
                             <NavLink
                                 key={item.name}
                                 to={item.to}
-                                className={({ isActive }) =>
-                                    `inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors duration-200 ${
-                                        isActive
-                                            ? "text-blue-600 dark:text-blue-400 border-b-2 border-blue-500"
-                                            : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
-                                    }}`
-                                }
+                                className={linkClass}
                             >
                                 {item.name}
                             </NavLink>
                         ))}
                     </div>
-                    <div className="border-t border-gray-200 dark:border-zinc-800 pt-4 mt-4 flex items-center justify-center">
-                        <button className="md:block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors cursor-pointer mb-4">
-                            Download Resume
+                    <div className="border-t border-[#D8D6CE] dark:border-[#2A2C30] pt-4 pb-4 flex items-center justify-center">
+                        <button className="pf-sans px-4 py-2 border border-[#1B1D1F] dark:border-[#ECEAE2] text-[#1B1D1F] dark:text-[#ECEAE2] text-sm font-medium hover:bg-[#1B1D1F] hover:text-[#F2F1EC] dark:hover:bg-[#ECEAE2] dark:hover:text-[#14161A] transition-colors duration-150 cursor-pointer">
+                            Download resume
                         </button>
                     </div>
                 </motion.div>

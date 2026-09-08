@@ -1,75 +1,48 @@
+import { BsArrowUpRight } from "react-icons/bs";
+
 const Hero = () => {
     return (
-        <section className="relative w-full h-full bg-white dark:bg-black">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-                <div className="text-center">
-                    {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 rounded-full text-sm font-medium mb-8">
-                        🏆 Rated #1 by G2 Crowd
-                    </div> */}
-
-                    <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
+        <section className="hero-section relative w-full bg-[#F2F1EC] dark:bg-[#14161A]">
+            <div className="hero-inner max-w-6xl mx-auto px-6 sm:px-8 pt-28 pb-24">
+                <div className="hero-copy max-w-2xl">
+                    <span className="hero-kicker pf-mono text-sm text-[#6B6F76]">
                         Hi, I'm Amit
-                        <br />
-                        <span className="bg-linear-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
-                            {" "}
-                            Full Stack Developer
+                    </span>
+
+                    <h1 className="hero-title pf-mono text-4xl md:text-6xl font-bold text-[#1B1D1F] dark:text-[#ECEAE2] leading-[1.1] mt-4">
+                        Full stack developer,{" "}
+                        <span className="relative inline-block">
+                            building with AI
+                            <span className="absolute left-0 -bottom-1 w-full h-0.75 bg-[#D98F2B]" />
                         </span>
-                        <br />
                     </h1>
 
-                    <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
-                        I build scalable apps using React, Node.js, Express and
-                        MongoDB with AI integration.
+                    <p className="hero-description pf-sans text-lg text-[#4A4D52] dark:text-[#B7B8B6] leading-relaxed mt-8 max-w-lg">
+                        I build scalable applications using React, Node.js,
+                        Express, and MongoDB, with AI Integration.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#projects">
-                            <button className="px-8 py-4 bg-linear-to-r from-pink-600 to-red-600 hover:from-pink-700 hover:to-red-700 text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 cursor-pointer">
-                                View Projects
-                            </button>
+                    <div className="flex items-center gap-8 mt-10">
+                        <a
+                            href="#projects"
+                            className="group pf-sans inline-flex items-center gap-1.5 text-sm font-medium text-[#1B1D1F] dark:text-[#ECEAE2]"
+                        >
+                            <span className="border-b border-[#1B1D1F] dark:border-[#ECEAE2] group-hover:border-[#D98F2B] group-hover:text-[#D98F2B] transition-colors duration-150">
+                                View projects
+                            </span>
+                            <BsArrowUpRight
+                                className="w-4 h-4 group-hover:text-[#D98F2B] transition-colors duration-150"
+                                strokeWidth={2}
+                            />
                         </a>
-                        <button className="px-8 py-4 border border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-zinc-800 font-semibold rounded-lg transition-colors duration-200 cursor-pointer">
+                        <a
+                            href="#contact"
+                            className="pf-sans text-sm font-medium text-[#6B6F76] hover:text-[#1B1D1F] dark:hover:text-[#ECEAE2] transition-colors duration-150"
+                        >
                             Contact
-                        </button>
+                        </a>
                     </div>
                 </div>
-
-                {/* <div className="mb-16">
-                    <h3 className="text-center text-lg font-semibold text-gray-900 dark:text-white mb-8">
-                        Trusted by industry leaders
-                    </h3>
-                </div>
-
-                <div className="text-center">
-                    <div className="inline-flex items-center gap-6 px-8 py-4 bg-gray-50 dark:bg-zinc-900 rounded-2xl">
-                        <div className="text-center">
-                            <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                                4.9/5
-                            </div>
-                            <div className="text-sm text-gray-500 dark:text-gray-400">
-                                G2 Rating
-                            </div>
-                        </div>
-                        <div className="w-px h-12 bg-gray-300 dark:bg-zinc-700"></div>
-                        <div className="text-center">
-                            <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                                99.9%
-                            </div>
-                            <div className="text-sm text-gray-500 dark:text-gray-400">
-                                Uptime
-                            </div>
-                        </div>
-                        <div className="w-px h-12 bg-gray-300 dark:bg-zinc-700"></div>
-                        <div className="text-center">
-                            <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                                24/7
-                            </div>
-                            <div className="text-sm text-gray-500 dark:text-gray-400">
-                                Support
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
             </div>
         </section>
     );

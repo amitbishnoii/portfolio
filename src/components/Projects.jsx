@@ -5,15 +5,21 @@ const Projects = ({ projects, showBtn = false }) => {
     const navigate = useNavigate();
 
     return (
-        <section id="projects" className="py-20 px-4 bg-white dark:bg-black">
-            <div className="max-w-7xl mx-auto flex flex-col">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <section
+            id="projects"
+            className="section-block py-24 px-6 sm:px-8 bg-[#F2F1EC] dark:bg-[#14161A]"
+        >
+            <div className="max-w-6xl mx-auto flex flex-col">
+                <div className="mb-16 max-w-xl">
+                    <h2 className="section-heading pf-mono text-3xl sm:text-4xl font-bold text-[#1B1D1F] dark:text-[#ECEAE2] tracking-tight">
                         Projects
                     </h2>
+                    <p className="pf-sans text-base text-[#6B6F76] mt-3 leading-relaxed">
+                        Full stack AI powered Projects.
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 lg:ml-96">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {projects.map((project, index) => (
                         <Card
                             key={index}
@@ -24,12 +30,15 @@ const Projects = ({ projects, showBtn = false }) => {
                         />
                     ))}
                 </div>
+
                 {showBtn && (
                     <button
-                        className="text-white bg-gray-900 hover:bg-black font-medium rounded-md px-5 py-2 border border-gray-700 transition-colors self-center mt-5"
                         onClick={() => navigate("/projects")}
+                        className="group pf-sans inline-flex items-center gap-1.5 text-sm font-medium text-[#1B1D1F] dark:text-[#ECEAE2] self-center mt-14"
                     >
-                        View all Projects
+                        <span className="border-b border-[#1B1D1F] dark:border-[#ECEAE2] group-hover:border-[#D98F2B] group-hover:text-[#D98F2B] transition-colors duration-150">
+                            View all projects
+                        </span>
                     </button>
                 )}
             </div>
