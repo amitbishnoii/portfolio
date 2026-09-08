@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { projects } from "../data/projects.js";
 import { BsArrowUpRight } from "react-icons/bs";
 
 const ProjectPage = () => {
+    useEffect(() => {
+        document.title = "Projects | Amit Bishnoi";
+    }, []);
+
     return (
         <section className="project-page py-24 bg-[#F2F1EC] dark:bg-[#14161A] overflow-hidden">
             <div className="max-w-6xl mx-auto px-6 sm:px-8">
