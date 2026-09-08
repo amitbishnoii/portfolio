@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { navItems } from "../data/navItems.js";
 import { SiLeetcode } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
+import { navItems } from "./Layout";
 
 const Footer = () => {
     return (

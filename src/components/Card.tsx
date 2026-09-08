@@ -1,7 +1,19 @@
 import { BsArrowUpRight } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 
-const Card = ({ url, title, description, icon, gitRepo }) => {
+const Card = ({
+    url,
+    title,
+    description,
+    icon,
+    gitRepo,
+}: {
+    url: string;
+    title: string;
+    description: string;
+    icon: string;
+    gitRepo: string;
+}) => {
     return (
         <div className="project-card group relative max-w-lg p-7 border border-[#D8D6CE] dark:border-[#2A2C30] bg-[#F2F1EC] dark:bg-[#14161A] transition-colors duration-150 hover:border-[#D98F2B]">
             <img src={icon} className="w-9 h-9 object-contain" />

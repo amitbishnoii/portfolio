@@ -1,7 +1,14 @@
+import type { Project } from "../data/projects.js";
 import Card from "./Card.js";
 import { useNavigate } from "react-router-dom";
 
-const Projects = ({ projects, showBtn = false }) => {
+const Projects = ({
+    projects,
+    showBtn = false,
+}: {
+    projects: Project[];
+    showBtn: boolean;
+}) => {
     const navigate = useNavigate();
 
     return (
@@ -27,6 +34,7 @@ const Projects = ({ projects, showBtn = false }) => {
                             title={project.title}
                             description={project.desc}
                             icon={project.icon}
+                            gitRepo={project.gitRepo}
                         />
                     ))}
                 </div>

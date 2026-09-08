@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 import { GrClose } from "react-icons/gr";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion } from "motion/react";
+import type { navItem } from "./Layout";
 
-export default function Navbar({ navItems }) {
+export default function Navbar({ navItems }: { navItems: navItem[] }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const linkClass = ({ isActive }) =>
+    const linkClass = ({ isActive }: { isActive: boolean }) =>
         `pf-sans inline-flex items-center pt-1 pb-1 text-sm font-medium border-b-2 transition-colors duration-150 ${
             isActive
                 ? "text-[#1B1D1F] dark:text-[#ECEAE2] border-[#D98F2B]"
