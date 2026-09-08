@@ -1,5 +1,5 @@
-import Footer from "./Footer.jsx";
-import Navbar from "./Navbar.jsx";
+import Footer from "./Footer.js";
+import Navbar from "./Navbar.js";
 import { Outlet } from "react-router-dom";
 import { navItems } from "../data/navItems.js";
 

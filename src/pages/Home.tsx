@@ -1,6 +1,6 @@
-import Hero from "../components/Hero.jsx";
-import Projects from "../components/Projects.jsx";
-import TechStack from "../components/TechStack.jsx";
+import Hero from "../components/Hero.js";
+import Projects from "../components/Projects.js";
+import TechStack from "../components/TechStack.js";
 import { projects } from "../data/projects.js";
 
 const Home = () => {

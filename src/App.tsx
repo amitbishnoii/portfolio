@@ -1,8 +1,8 @@
-import Home from "./pages/Home.jsx";
-import Layout from "./components/Layout.jsx";
+import Home from "./pages/Home.js";
+import Layout from "./components/Layout.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Contact from "./pages/Contact.jsx";
-import ProjectPage from "./pages/ProjectPage.jsx";
+import Contact from "./pages/Contact.js";
+import ProjectPage from "./pages/ProjectPage.js";
 
 function App() {
     const router = createBrowserRouter([

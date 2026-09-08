@@ -1,4 +1,4 @@
-import Card from "./Card.jsx";
+import Card from "./Card.js";
 import { useNavigate } from "react-router-dom";
 
 const Projects = ({ projects, showBtn = false }) => {
